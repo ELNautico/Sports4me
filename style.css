@@ -314,6 +314,7 @@ p {
     height: 300px;
     perspective: 1000px;
     margin-right: 40px;
+    margin-left: 180px;
 }
 @media (max-width: 576px) {
     .cube-container {

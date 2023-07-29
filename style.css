@@ -180,31 +180,45 @@ nav {
 .burger.toggle div:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
 /* Hero Section Styles */
 #hero-section {
     position: relative;
     height: 100vh;
     overflow: hidden;
-  }
-  
-  .video-background {
+}
+
+.video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-  }
-  
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+
+}
+
+.youtube-container {
+	overflow: hidden;
+	width: 100%;
+	aspect-ratio: 16/9;
+	pointer-events: none;
+}
+
+.youtube-container iframe {
+    width: 300%;
     height: 100%;
+    margin-left: -100%;
     filter: brightness(0.6);
-    object-fit: cover; /* Add this to ensure the video fills the container without black borders */
-  }
+}
+
+@media (max-width: 576px) {
+    #hero-section{
+        display: none;
+    }
+}
 
 .hero-content {
     position: absolute;
@@ -213,16 +227,19 @@ nav {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
+    z-index: 1; 
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: #fff; 
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    color: #fff; 
 }
 
 .btn {
@@ -232,16 +249,16 @@ nav {
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
-    border: 2px solid #fff; 
+    border: 2px solid #fff;
     transition: border-radius 0.3s ease, border 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
     border-radius: 0px;
     border: 2px solid #fff;
-    background-color: #d21e1e; 
-    color: #fff; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    background-color: #d21e1e;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: btnAnimation 0.3s ease;
 }
 
